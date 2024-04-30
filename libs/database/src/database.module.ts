@@ -23,11 +23,11 @@ import { Module } from '@nestjs/common';
             },
             slaves: [
               {
-                host: configService.get('postgres.slave_host'),
+                host: configService.get('postgres.master_host'),
                 port: configService.get<number>('postgres.slave_port'),
                 database: configService.get('postgres.slave_database'),
-                username: configService.get('postgres.slave_username'),
-                password: configService.get('postgres.slave_password'),
+                username: configService.get('postgres.master_username'),
+                password: configService.get('postgres.master_password'),
               },
             ],
           },

@@ -7,10 +7,7 @@ export default registerAs('postgres', () => ({
   master_database: process.env.POSTGRES_MASTER_DATABASE,
   master_username: process.env.POSTGRES_MASTER_USERNAME,
   master_password: process.env.POSTGRES_MASTER_PASSWORD,
-  slave_host: process.env.POSTGRES_SLAVE_HOST,
   slave_port: Number(process.env.POSTGRES_SLAVE_PORT),
   slave_database: process.env.POSTGRES_SLAVE_DATABASE,
-  slave_username: process.env.POSTGRES_SLAVE_USERNAME,
-  slave_password: process.env.POSTGRES_SLAVE_PASSWORD,
   mode: process.env.WORK_ENV,
 }));

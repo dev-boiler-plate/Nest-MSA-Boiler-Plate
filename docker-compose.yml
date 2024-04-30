@@ -8,10 +8,11 @@ services:
       - "12345:5432"
     container_name: master
     environment:
-      - POSTGRES_MASTER_DB=master
+      - POSTGRES_MASTER_DATABASE=master
       - POSTGRES_MASTER_USERNAME=master_user
       - POSTGRES_MASTER_PASSWORD=master1234
       - POSTGRES_MASTER_INITDB_ARGS=--encoding=UTF-8
+      - POSTGRES_HOST_AUTH_METHOD=trust
     restart: always
   db_slave:
     image: postgres
@@ -20,8 +21,9 @@ services:
       - "12346:5432"
     container_name: slave
     environment:
-      - POSTGRES_SLAVE_DB=slave
-      - POSTGRES_SLAVE_USERNAME=slave_user
-      - POSTGRES_SLAVE_PASSWORD=slave1234
+      - POSTGRES_SLAVE_DATABASE=slave
+      - POSTGRES_MASTER_USERNAME=master_user
+      - POSTGRES_MASTER_PASSWORD=master1234
       - POSTGRES_SLAVE_INITDB_ARGS=--encoding=UTF-8
+      - POSTGRES_HOST_AUTH_METHOD=trust
     restart: always
