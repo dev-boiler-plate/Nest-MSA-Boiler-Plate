@@ -59,6 +59,12 @@
       ],
       "@app/local-storage/*": [
         "libs/local-storage/src/*"
+      ],
+      "@app/redis": [
+        "libs/redis/src"
+      ],
+      "@app/redis/*": [
+        "libs/redis/src/*"
       ]
     }
   }

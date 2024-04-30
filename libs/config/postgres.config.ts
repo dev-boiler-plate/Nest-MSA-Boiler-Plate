@@ -1,9 +1,16 @@
 import { registerAs } from '@nestjs/config';
+import * as process from 'process';
 
 export default registerAs('postgres', () => ({
-  host: process.env.POSTGRES_HOST || 'localhost',
-  port: process.env.POSTGRES_PORT ? Number(process.env.POSTGRES_PORT) : 5432,
-  database: process.env.POSTGRES_DATABASE || 'postgres',
-  username: process.env.POSTGRES_USERNAME || 'postgres',
-  password: process.env.POSTGRES_PASSWORD || 'postgres',
+  master_host: process.env.POSTGRES_MASTER_HOST,
+  master_port: Number(process.env.POSTGRES_MASTER_PORT),
+  master_database: process.env.POSTGRES_MASTER_DATABASE,
+  master_username: process.env.POSTGRES_MASTER_USERNAME,
+  master_password: process.env.POSTGRES_MASTER_PASSWORD,
+  slave_host: process.env.POSTGRES_SLAVE_HOST,
+  slave_port: Number(process.env.POSTGRES_SLAVE_PORT),
+  slave_database: process.env.POSTGRES_SLAVE_DATABASE,
+  slave_username: process.env.POSTGRES_SLAVE_USERNAME,
+  slave_password: process.env.POSTGRES_SLAVE_PASSWORD,
+  mode: process.env.WORK_ENV,
 }));

@@ -91,7 +91,8 @@
       "^@app/interceptor(|/.*)$": "<rootDir>/libs/interceptor/src/$1",
       "^@app/util(|/.*)$": "<rootDir>/libs/util/src/$1",
       "^@app/event(|/.*)$": "<rootDir>/libs/event/src/$1",
-      "^@app/local-storage(|/.*)$": "<rootDir>/libs/local-storage/src/$1"
+      "^@app/local-storage(|/.*)$": "<rootDir>/libs/local-storage/src/$1",
+      "^@app/redis(|/.*)$": "<rootDir>/libs/redis/src/$1"
     }
   }
 }
