@@ -1,0 +1,38 @@
+version: "3.8"
+
+# slave로 사용하기위한 저장소를 공용으로 사용
+volumes:
+  microservice_db_data:
+
+
+services:
+  db:
+    image: postgres
+    command: [ "postgres", "-c", "log_statement=all" ]
+    ports:
+      - "12345:5432"
+    container_name: master
+    environment:
+      - POSTGRES_MASTER_DATABASE=master
+      - POSTGRES_MASTER_USERNAME=master_user
+      - POSTGRES_MASTER_PASSWORD=master1234
+      - POSTGRES_MASTER_INITDB_ARGS=--encoding=UTF-8
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    restart: always
+    volumes:
+      - microservice_db_data:/var/lib/postgresql/data
+  db_slave:
+    image: postgres
+    command: [ "postgres", "-c", "log_statement=all" ]
+    ports:
+      - "12346:5432"
+    container_name: slave
+    environment:
+      - POSTGRES_SLAVE_DATABASE=slave
+      - POSTGRES_MASTER_USERNAME=master_user
+      - POSTGRES_MASTER_PASSWORD=master1234
+      - POSTGRES_SLAVE_INITDB_ARGS=--encoding=UTF-8
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    restart: always
+    volumes:
+      - microservice_db_data:/var/lib/postgresql/data
