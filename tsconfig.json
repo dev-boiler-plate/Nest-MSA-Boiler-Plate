@@ -65,6 +65,24 @@
       ],
       "@app/redis/*": [
         "libs/redis/src/*"
+      ],
+      "@app/strategy": [
+        "libs/strategy/src"
+      ],
+      "@app/strategy/*": [
+        "libs/strategy/src/*"
+      ],
+      "@app/guard": [
+        "libs/guard/src"
+      ],
+      "@app/guard/*": [
+        "libs/guard/src/*"
+      ],
+      "@app/decorator": [
+        "libs/decorator/src"
+      ],
+      "@app/decorator/*": [
+        "libs/decorator/src/*"
       ]
     }
   }

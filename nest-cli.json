@@ -90,6 +90,33 @@
       "compilerOptions": {
         "tsConfigPath": "libs/redis/tsconfig.lib.json"
       }
+    },
+    "strategy": {
+      "type": "library",
+      "root": "libs/strategy",
+      "entryFile": "index",
+      "sourceRoot": "libs/strategy/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/strategy/tsconfig.lib.json"
+      }
+    },
+    "guard": {
+      "type": "library",
+      "root": "libs/guard",
+      "entryFile": "index",
+      "sourceRoot": "libs/guard/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/guard/tsconfig.lib.json"
+      }
+    },
+    "decorator": {
+      "type": "library",
+      "root": "libs/decorator",
+      "entryFile": "index",
+      "sourceRoot": "libs/decorator/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/decorator/tsconfig.lib.json"
+      }
     }
   }
 }
