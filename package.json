@@ -103,7 +103,8 @@
       "^@app/redis(|/.*)$": "<rootDir>/libs/redis/src/$1",
       "^@app/strategy(|/.*)$": "<rootDir>/libs/strategy/src/$1",
       "^@app/guard(|/.*)$": "<rootDir>/libs/guard/src/$1",
-      "^@app/decorator(|/.*)$": "<rootDir>/libs/decorator/src/$1"
+      "^@app/decorator(|/.*)$": "<rootDir>/libs/decorator/src/$1",
+      "^@app/model(|/.*)$": "<rootDir>/libs/model/src/$1"
     }
   }
 }

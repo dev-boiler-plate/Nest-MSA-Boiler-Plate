@@ -84,6 +84,12 @@
       ],
       "@app/decorator/*": [
         "libs/decorator/src/*"
+      ],
+      "@app/model": [
+        "libs/model/src"
+      ],
+      "@app/model/*": [
+        "libs/model/src/*"
       ]
     }
   }
